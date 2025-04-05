@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cars</title>
+    <style>
+        body {
+            background-color: darkslategray;
+            color: lightgray
+        }
+
+        table, th, td {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+<div th:if="${ not#lists.isEmpty(cars)}">
+    <table>
+        <tr>
+            <th>Model</th>
+            <th>Price</th>
+            <th>Color</th>
+        </tr>
+        <tr th:each="car : ${cars}">
+            <td th:text="${car.model}"></td>
+            <td th:text="${car.price}"></td>
+            <td th:text="${car.color}"></td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>
